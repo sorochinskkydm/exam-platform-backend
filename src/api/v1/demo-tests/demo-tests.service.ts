@@ -7,6 +7,8 @@ import { EntityNotFoundException } from 'src/Errors/entity-not-found';
 import { FindAllDemoTestsDto } from './dto/find-all-demo-tests.dto';
 import { Op } from 'sequelize';
 import Helper from 'src/utils/helper';
+import { DemoTestsQuestions } from '../questions/models/question.model';
+import { SimpleDemoTestDto } from './dto/simple-demo-test.dto';
 
 @Injectable()
 export class DemoTestsService {
@@ -33,13 +35,24 @@ export class DemoTestsService {
             },
             include: [
                 {
-                    model: Items,
-                    as: 'item',
+                    model: DemoTestsQuestions,
+                    as: 'questions',
                 },
             ],
+            attributes: ['id', 'color', 'title', 'dateCreated'],
         });
 
-        return demoTests;
+        const simple = demoTests.map(
+            (demoTest): SimpleDemoTestDto => ({
+                id: demoTest.id,
+                title: demoTest.title,
+                color: demoTest.color,
+                dateCreated: demoTest.dateCreated,
+                questionsCount: demoTest.questions.length,
+            }),
+        );
+
+        return simple;
     }
 
     async findOne(demoTestId: string) {
