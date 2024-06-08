@@ -15,8 +15,8 @@ async function bootstrap() {
   const HOST = configService.get<string>('SERVER_HOST');
 
   const config = new DocumentBuilder()
-    .setTitle('Encrypted messenger API')
-    .setDescription('The encrypted messenger API description')
+    .setTitle('Exam platform API')
+    .setDescription('The exam platform API description')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
