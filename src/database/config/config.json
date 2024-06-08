@@ -1,26 +1,32 @@
 {
-  "development": {
-    "username": "postgres",
-    "password": "BrosGriefy1998",
-    "database": "exam_platform",
-    "host": "localhost",
-    "dialect": "postgres",
-    "migrationStorageTableName": "migrations_sequelize",
-    "migrationStoragePath": "../database/migrations",
-    "seederStorageTableName": "seeders_sequelize"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
+    "development": {
+        "username": "postgres",
+        "password": "BrosGriefy1998",
+        "database": "exam_platform",
+        "host": "localhost",
+        "dialect": "postgres",
+        "migrationStorageTableName": "migrations_sequelize",
+        "migrationStoragePath": "../database/migrations",
+        "seederStorageTableName": "seeders_sequelize"
+    },
+    "test": {
+        "username": "postgres",
+        "password": "BrosGriefy1998",
+        "database": "exam_platform",
+        "host": "localhost",
+        "dialect": "postgres",
+        "migrationStorageTableName": "migrations_sequelize",
+        "migrationStoragePath": "../database/migrations",
+        "seederStorageTableName": "seeders_sequelize"
+    },
+    "production": {
+        "username": "postgres",
+        "password": "BrosGriefy1998",
+        "database": "exam_platform",
+        "host": "localhost",
+        "dialect": "postgres",
+        "migrationStorageTableName": "migrations_sequelize",
+        "migrationStoragePath": "../database/migrations",
+        "seederStorageTableName": "seeders_sequelize"
+    }
 }
